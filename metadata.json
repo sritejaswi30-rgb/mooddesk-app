@@ -1,0 +1,10 @@
+{
+  "name": "MoodDesk",
+  "description": "Cozy aesthetic productivity dashboard containing customizable wallpapers, live canvas backdrops, digital clock style skins, task tracker, sticky notes, wellness steps monitors, interactive speaker pet helpers, and baked daily fortune cookies with ambient lofi atmospheric sounds synthesizer.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
