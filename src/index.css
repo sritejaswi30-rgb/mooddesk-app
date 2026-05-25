@@ -1,0 +1,168 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;605;700&display=swap');
+@import "tailwindcss";
+
+/* Define font families */
+.font-sans {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif !important;
+}
+
+.font-space {
+  font-family: 'Space Grotesk', sans-serif !important;
+}
+
+.font-bubble {
+  font-family: 'Outfit', sans-serif !important;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);
+}
+
+/* RGB pulsing glow borders */
+@keyframes rgb-glow {
+  0% {
+    border-color: #f43f5e;
+    box-shadow: 0 0 10px rgba(244, 63, 94, 0.2);
+  }
+  33% {
+    border-color: #3b82f6;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+  }
+  66% {
+    border-color: #10b981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+  }
+  100% {
+    border-color: #f43f5e;
+    box-shadow: 0 0 10px rgba(244, 63, 94, 0.2);
+  }
+}
+
+.rgb-active {
+  animation: rgb-glow 6s infinite ease-in-out;
+  border-width: 2px !important;
+}
+
+/* Slide in from right */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in-right 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom fade effects */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* --- Frosted Glass Theme Specific Keyframes and Classes --- */
+@keyframes companion-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.companion-float {
+  animation: companion-float 4s ease-in-out infinite;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease !important;
+}
+
+#floating-companions-control .companion-float:hover {
+  transform: scale(1.32) rotate(10deg) translateY(-8px) !important;
+  filter: brightness(1.15) drop-shadow(0 10px 15px rgba(244, 63, 94, 0.45)) !important;
+}
+
+.frosted-bg {
+  background: radial-gradient(circle at 20% 30%, #4c1d95 0%, transparent 50%),
+              radial-gradient(circle at 80% 70%, #be185d 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%, #1e1b4b 0%, #0f172a 100%) !important;
+}
+
+.glass-frosted {
+  background: rgba(255, 255, 255, 0.45) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 24px !important;
+}
+
+/* Glass with custom dark mode support */
+.dark .glass-frosted {
+  background: rgba(15, 23, 42, 0.45) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.widget-title-style {
+  font-size: 10px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  opacity: 0.6 !important;
+  margin-bottom: 8px !important;
+  font-weight: 700 !important;
+}
+
+.text-contrast-safe {
+  text-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.75), 0 0 3px rgba(0, 0, 0, 0.55), 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.text-contrast-safe-light {
+  text-shadow: 0 1.5px 3px rgba(255, 255, 255, 0.98), 0 0 3px rgba(255, 255, 255, 0.95), 0 0 1.5px rgba(255, 255, 255, 0.9);
+}
+
+.widget-text-shadow-safe, .widget-text-shadow-safe * {
+  text-shadow: 0 0.5px 1.5px rgba(255, 255, 255, 0.6), 0 0 1px rgba(255, 255, 255, 0.4) !important;
+}
+
+.dark .widget-text-shadow-safe, .dark .widget-text-shadow-safe * {
+  text-shadow: 0 1px 2.5px rgba(0, 0, 0, 0.85), 0 0 1.5px rgba(0, 0, 0, 0.6) !important;
+}
+
+
+
